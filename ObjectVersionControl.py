@@ -18,7 +18,6 @@ tfnet = TFNet(options)
 
 # read the color image and covert to RGB
 
-
 img = cv2.imread('Samplesetup2.jpg', cv2.IMREAD_COLOR)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
