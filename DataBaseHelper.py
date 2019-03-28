@@ -22,11 +22,27 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
+
+
+
+
 # cursor.lastrowid   # gets id of last insert
 
 
 
-### Reference SQL Commands
+
+
+
+
+
+
+
+
+
+
+
+
+### Reference SQL Commands     TODO: remove after databasehelper is completed
 
 # cursor.execute("ALTER TABLE relations "
 # #                "ADD COLUMN _right FLOAT, "
@@ -39,6 +55,9 @@ cursor = db.cursor()
 # cursor.execute("DROP TABLE objects")
 
 # cursor.execute("CREATE TABLE images (id INT AUTO_INCREMENT PRIMARY KEY, identifier VARCHAR(255), datetime DATETIME)")
+
+# cursor.execute("CREATE TABLE relations (id INT AUTO_INCREMENT PRIMARY KEY, objects_id INT, clock_position INT, "
+#                "distance FLOAT, FOREIGN KEY (objects_id) REFERENCES objects(id))")
 
 # cursor.execute("CREATE TABLE relations (id INT AUTO_INCREMENT PRIMARY KEY, objects_id INT, "
 #               "midpoint VARCHAR(255), length FLOAT, width FLOAT,"
