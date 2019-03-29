@@ -1,8 +1,15 @@
 import cv2
-from darkflow.net.build import TFNet
 import matplotlib.pyplot as plt
 import MySQLdb
 import os
+
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir)
+
+from darkflow.net.build import TFNet
+
 
 # options and image read/cast credit https://github.com/markjay4k/YOLO-series/blob/master/part2%20-%20Processing%20Images%20with%20YOLO%20and%20openCV.ipynb
 
@@ -47,8 +54,7 @@ class YoloController:
     # plt.show()
     plt.savefig(new_image)
 
-    return results
 
 
-yoloController = YoloController("labelled_setup1.png")
+yoloController = YoloController("Samplesetup1.jpg")
 yoloController.interpret_image()
